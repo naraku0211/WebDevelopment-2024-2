@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Photo Library
+        </title>
+        <link rel="icon" href="images/icons/picture.png" type="image/x-icon">
+        <style>
+            [aria-label^="breadcrumbs" i]li + li::before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid currentColor;
+                border-right: 2px solid currentColor;
+                rotate: 45deg;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Photo Library</h1>
+        
+        <nav aria-label="breadcrumbs">
+            <ul style="list-style-type: none;" role="list">
+                <li>
+                    <a aria-current="page" aria-selected="true" href="index.html">Home</a>
+                </li>
+                <li><a href="pages/anime.html" target="" title="Anime Photos">Anime Photos</a></li>
+                <li><a href="pages/nature.html" target="" title="Nature Lover">Nature Lover</a></li>
+                <li><a href="pages/food.html" target="" title="Food Photography">Food Photography</a></li>
+            </ul>   
+        </nav>
+        
+        <ol>
+
+        </ol>   
+
+
+    </body>
+</html>
