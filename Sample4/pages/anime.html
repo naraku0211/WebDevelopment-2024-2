@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anime Lover</title>
+        <link rel="icon" href="../images/icons/anime.gif" type="image/x-icon">
+        <style>
+            /* Style for the breadcrumbs separator */
+            [aria-label^="breadcrumbs" i] ul {
+                display: flex; /* Make the list items horizontal */
+                align-items: center; /* Vertically center the items */
+                padding: 0;
+                margin: 0;
+            }
+
+            [aria-label^="breadcrumbs" i] li {
+                display: flex; /* Make list items flex containers */
+                align-items: center; /* Vertically center the content */
+            }
+
+            /* Style for the separator between breadcrumb items */
+            [aria-label^="breadcrumbs" i] li + li::before {
+                content: ""; /* Add content for the separator */
+                display: inline-block; /* Make it inline */
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid currentColor; /* Create the arrow shape */
+                border-right: 2px solid currentColor;
+                rotate: 45deg; /* Rotate to form an arrow */
+                opacity: 0.8; /* Slightly transparent */
+                margin: 0 10px; /* Add spacing between items */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Anime Lover</h1>
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumbs">
+            <ul style="list-style-type: none;" role="list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a aria-current="page" href="anime.html">Anime Photos</a></li>
+            </ul>
+        </nav>
+        
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" href="images/icons/picture.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            background-color: orange;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .form-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .form-control label {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .form-control input {
+            font-size: 1.5em;
+            padding: 5px;
+            width: 550px;
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 2.5em;
+            background-color: limegreen;
+            border: 2px solid black;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Login Page</h1>
+    </div>
+    <div class="form-main">
+        <form action="" id="loginForm">
+            <div class="form-control"> 
+                <label for="username">Username:</label>
+                <input type="email" name="username" id="username" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-control">
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+            </div>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const validUsername = "admin@example.com";
+            const validPassword = "admin123";
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let errorMessage = document.getElementById("error-message");
+
+            if(username === validUsername && password === validPassword){
+                //redirect to dashboard.html
+                window.location.href = "dashboard.html";
+            }
+            else{
+                //display Error Message
+                errorMessage.textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>
