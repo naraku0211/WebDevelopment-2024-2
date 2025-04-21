@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding -->
+  <meta charset="UTF-8" />
+
+  <!-- Responsive design: sets the viewport for proper scaling on different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Page title shown in the browser tab -->
+  <title>Habang may buhay May?</title>
+
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <div class="container-body">
+      <!-- Main title of the page -->
+      <h1 class="title">Habang may buhay, May?</h1>
+
+      <!-- Input form section -->
+      <div class="form">
+        <!-- Text input for user entry -->
+        <input type="text" id="main-input" />
+
+        <!-- Button to submit user input -->
+        <button type="button" id="submit-btn">Submit</button>
+
+        <!-- Button to reset input and result -->
+        <button type="button" id="reset-btn">Reset</button>
+      </div>
+
+      <!-- Label for the result -->
+      <h5>Result:</h5>
+
+      <!-- Div where the result will be displayed -->
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript section -->
+  <script>
+    // Get DOM elements
+    let mainInput = document.querySelector("#main-input");
+    let submitBtn = document.querySelector("#submit-btn");
+    let resetBtn = document.querySelector("#reset-btn");
+    let result = document.querySelector("#result"); 
+
+    // Create a paragraph element to hold result text
+    let p = document.createElement("p");
+
+    // Array of possible results to display
+    const arr = ["pagsubok", "pagbangon", "pagibig"];
+
+    // Function triggered when Submit button is clicked
+    const submitFunc = () => {
+      // Get input value and convert to lowercase, remove extra spaces
+      let mainVal = mainInput.value.trim().toLowerCase();
+      let resultVal;
+
+      // Check if input is not empty
+      if (mainVal) {
+        // Randomly select a value from the array
+        resultVal = arr[Math.floor(Math.random() * arr.length)];
+      } else {
+        // Show error message if input is empty
+        resultVal = "Empty field is not allowed";
+      }
+
+      // Set the result text
+      p.innerText = resultVal;
+
+      // Display the result in the result div
+      result.appendChild(p);
+    };
+
+    // Function triggered when Reset button is clicked
+    const resetFunc = () => {
+      // Clear input field
+      mainInput.value = "";
+
+      // Clear the result text
+      p.innerText = "";
+    };
+
+    // Add click event listener to the Submit button
+    submitBtn.addEventListener("click", submitFunc);
+
+    // Add click event listener to the Reset button
+    resetBtn.addEventListener("click", resetFunc);
+  </script>
+</body>
+</html>
